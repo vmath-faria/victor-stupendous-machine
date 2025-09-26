@@ -1,0 +1,103 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTecher's Machine</title>
+</head>
+
+<body style="background-color: rebeccapurple;">
+    <center>
+        <h1>SPTecher's Machine</h1>
+
+        <h3>Digite um número decimal:</h3>
+        <input id="ndi" type="number" placeholder="Ex: 42">
+        <br><br>
+        <h3>Digite um número octal</h3>
+        <input id="noi" type="number" placeholder="Ex: 77">
+        <br><br>
+        <h3>Digite um número hexadecimal</h3>
+        <input id="nhi" type="text" placeholder="Ex: F5">
+        <br><br>
+        <h3>Digite um número binário</h3>
+        <input id="nbi" type="number" placeholder="Ex: 10110">
+        <br><br>
+        <button onclick="converter()">Converter</button>
+
+        <h3>Resultados Decimal:</h3>
+        <p>Octal:
+        <div id="ndo"></div>
+        </p>
+        <p>Hexadecimal:
+        <div id="ndh"></div>
+        </p>
+        <p>Binário:
+        <div id="ndb"></div>
+        </p>
+        <h3>Resultados Octal:</h3>
+        <p>Decimal:
+        <div id="nod"></div>
+        </p>
+        <p>Hexadecimal:
+        <div id="noh"></div>
+        </p>
+        <p>Binário:
+        <div id="nob"></div>
+        </p>
+        <h3>Resultados Hexadecimal:</h3>
+        <p>Octal:
+        <div id="nho"></div>
+        </p>
+        <p>Decimal:
+        <div id="nhd"></div>
+        </p>
+        <p>Binário:
+        <div id="nhb"></div>
+        </p>
+        <h3>Resultados Binário:</h3>
+        <p>Octal:
+        <div id="nbo"></div>
+        </p>
+        <p>Hexadecimal:
+        <div id="nbh"></div>
+        </p>
+        <p>Decimal:
+        <div id="nbd"></div>
+        </p>
+    </center>
+
+</body>
+</html>
+<script>
+    function converter() {
+        var decimal = parseInt(Number(ndi.value), 10)
+        var octal = parseInt(Number(noi.value), 8)
+        var hexadecimal = parseInt(nhi.value, 16)
+        var binario = parseInt(Number(nbi.value), 2)
+            if(ndi.value.isNaN||noi.value.isNan||nbi.value.isNaN||
+            noi.value.includes('8')||noi.value.includes('9')||
+            nbi.value.includes('2')||nbi.value.includes('3')||
+            nbi.value.includes('4')||nbi.value.includes('5')||
+            nbi.value.includes('6')||nbi.value.includes('7')||
+            nbi.value.includes('8')||nbi.value.includes('9')){
+                alert(`Valor decimal, binário ou octal inválido!`)
+            }else{
+                ndo.innerHTML = `${ndi.value} em octal é: ${decimal.toString(8)}`
+                ndh.innerHTML = `${ndi.value} em hexadecimal é: ${decimal.toString(16)}`
+                ndb.innerHTML = `${ndi.value} em binário é: ${decimal.toString(2)}`
+                nod.innerHTML = `${noi.value} em decimal é: ${octal.toString(10)}`
+                noh.innerHTML = `${noi.value} em hexadecimal é: ${octal.toString(16)}`
+                nob.innerHTML = `${noi.value} em binário é: ${octal.toString(2)}`
+                nho.innerHTML = `${nhi.value} em octal é: ${hexadecimal.toString(8)}`
+                nhb.innerHTML = `${nhi.value} em binário é: ${hexadecimal.toString(2)}`
+                nhd.innerHTML = `${nhi.value} em decimal é: ${hexadecimal.toString(10)}`
+                nbo.innerHTML = `${nbi.value} em octal é: ${binario.toString(8)}`
+                nbh.innerHTML = `${nbi.value} em hexadecimal é: ${binario.toString(16)}`
+                nbd.innerHTML = `${nbi.value} em decimal é: ${binario.toString(10)}`
+            }
+    }
+</script>
